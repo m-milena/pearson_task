@@ -22,7 +22,6 @@ for i in range(len(years)):
 	db_cursor.execute(sql_select)
 	db_record = db_cursor.fetchall()
 	minimum_score.append(*db_record[0])
-print(minimum_score)
 
 # Get data about maximum score point in different years
 maximum_score = []
@@ -32,7 +31,6 @@ for i in range(len(years)):
 	db_record = db_cursor.fetchall()
 	maximum_score.append(*db_record[0])
 
-print(maximum_score)
 
 # Get data about average score point accepted students in different years
 average_score = []
@@ -40,11 +38,10 @@ for i in range(len(years)):
 	sql_select = "SELECT AVG(score) FROM score_board WHERE accepted='TRUE' AND year="+str(years[i])
 	db_cursor.execute(sql_select)
 	db_record = db_cursor.fetchall()
-	average_score.append(*db_record[0])
+	average_score.append(int(*db_record[0]))
 
-print(average_score)
-
-# TODO: przyblizenie wartości sredniej
+from score_points_graph import draw_graph
+draw_graph(years, minimum_score, maximum_score, average_score)
 
 # database disconnect
 database_disconnect.database_disconnect(db_connection, db_connection.cursor())
