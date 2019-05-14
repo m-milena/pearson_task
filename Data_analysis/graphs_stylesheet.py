@@ -38,7 +38,7 @@ def plot_settings(plt, title, xlabel, ylabel):
 	plt.title(title, fontweight="bold", fontsize=20, color=color_palette['dark_dark_grey'])
 
 def legend_settings(plt):
-	legend = plt.legend(fontsize=12, loc=1)
+	legend = plt.legend(fontsize=12)
 	plt.setp(legend.get_texts(), color=color_palette['dark_dark_grey'], alpha=0.8)
 
 	
