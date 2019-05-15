@@ -23,8 +23,9 @@ color_palette = {
 
 # default plot settings
 def plot_settings(plt, title, xlabel, ylabel):
-
-	plt.figure(figsize=(20,10), facecolor='white')
+	
+	fig = plt.gcf()
+	fig.set_size_inches(20,10)
 
 	ax = plt.gca()
 	ax.set_facecolor('white')
@@ -41,4 +42,21 @@ def legend_settings(plt):
 	legend = plt.legend(fontsize=12)
 	plt.setp(legend.get_texts(), color=color_palette['dark_dark_grey'], alpha=0.8)
 
+
+def subplots_settings(plt, axarr, l_rows, l_columns, titles, xlabel, ylabel):
+	fig = plt.gcf()
+	fig.set_size_inches(12,8)
+	count = 0
+	for i in range(l_rows):
+		for j in range(l_columns):
+			axarr[i,j].grid(color='grey', linestyle='-', linewidth=0.25, alpha=0.5)
+			axarr[i,j].spines['top'].set_visible(False)
+			axarr[i,j].spines['right'].set_visible(False)
+			plt.setp(axarr[i,j].spines.values(), color=color_palette['dark_dark_grey'])
+			axarr[i,j].set_title(titles[count], fontsize=14, color=color_palette['dark_dark_grey'])
+			axarr[i,j].set_xlabel(xlabel[count], fontsize=12, color=color_palette['dark_dark_grey'])
+			axarr[i,j].set_ylabel(ylabel[count], fontsize=12, color=color_palette['dark_dark_grey'])
+			plt.setp(axarr[i,j].get_xticklabels(), fontsize=12, color=color_palette['dark_dark_grey'])
+			plt.setp(axarr[i,j].get_yticklabels(), fontsize=12, color=color_palette['dark_dark_grey'])
+			count = count + 1
 	
