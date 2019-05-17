@@ -18,7 +18,7 @@ X_scale = min_max_scaler.fit_transform(X)
 
 # Splitting data to training and validation+test set (70/30%)
 from sklearn.model_selection import train_test_split
-X_train, X_val_and_test, Y_train, Y_val_and_test = train_test_split(X_scale, Y, test_size = 0.3)
+X_train, X_val_and_test, Y_train, Y_val_and_test = train_test_split(X_scale, Y, test_size = 0.2)
 
 # Splitting data to validation and test set (50/50%)
 X_val, X_test, Y_val, Y_test = train_test_split(X_val_and_test, Y_val_and_test, test_size = 0.5)
@@ -35,11 +35,11 @@ from keras import regularizers
 # Network architecture
 model = Sequential([
 	Dense(16, activation = 'relu', kernel_regularizer=regularizers.l1_l2(0.01, 0.01), input_shape = (8,)),
-	Dropout(0.1),
+	Dropout(0.3),
 	Dense(8, activation = 'relu', kernel_regularizer=regularizers.l1_l2(0.01, 0.01),),
-	Dropout(0.1),
+	Dropout(0.3),
 	Dense(16, activation = 'relu', kernel_regularizer=regularizers.l1_l2(0.01, 0.01),),
-	Dropout(0.1),
+	Dropout(0.3),
 	Dense(1, activation = 'sigmoid', kernel_regularizer=regularizers.l1_l2(0.01, 0.01)),
 ])
 
