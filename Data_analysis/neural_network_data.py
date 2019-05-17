@@ -17,7 +17,15 @@ with open('../Neural_network/neural_network_data.csv', 'w') as csvfile:
 	db_cursor.execute(sql_select)
 	db_record = db_cursor.fetchall()
 	count = 0
+	binary_truefalse = 0
 	for row in db_record:
+		if str(row[9]) =='TRUE':
+			binary_truefalse = 1
+		elif str(row[9]) == 'FALSE':
+			binary_truefalse = 0
+		else:
+			print('ERROR: '+str(row[9])+' is wrong type')
+			break
 		writer.writerow([row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9]])
 
 
