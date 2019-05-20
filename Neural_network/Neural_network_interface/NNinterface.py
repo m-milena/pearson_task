@@ -29,8 +29,18 @@ class NNinterface(QMainWindow):
 		interview_score = float(self.interview_edit.text())
 		score = int(self.score_edit.text())
 		social_activity = self.social_box.value()
+	
 		probability = check_probability(gpa, maths_exam, art_exam, language_exam, social_activity, essay_score, interview_score, score)
 		self.graduation.setText(str(round(probability, 2))+'%')
+		if probability >= 70:
+			self.graduation.setStyleSheet("""QLineEdit {background-color: green}""")
+		elif probability >= 60:
+			self.graduation.setStyleSheet("""QLineEdit {background-color: yellow}""")
+		else:
+			self.graduation.setStyleSheet("""QLineEdit {background-color: red}""")
+		
+		
+		
 		
 
 
