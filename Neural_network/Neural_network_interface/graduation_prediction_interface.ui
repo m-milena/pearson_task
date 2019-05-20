@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>558</width>
+    <width>629</width>
     <height>392</height>
    </rect>
   </property>
@@ -206,14 +206,18 @@
      </widget>
     </item>
     <item row="6" column="3" colspan="3">
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="graduation_button">
       <property name="text">
        <string>Check graduation probability </string>
       </property>
      </widget>
     </item>
     <item row="7" column="3" colspan="3">
-     <widget class="QLineEdit" name="graduation"/>
+     <widget class="QLineEdit" name="graduation">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -222,7 +226,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>558</width>
+     <width>629</width>
      <height>25</height>
     </rect>
    </property>

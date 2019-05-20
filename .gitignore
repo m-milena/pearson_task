@@ -2,3 +2,5 @@
 Data_analysis/\.idea/
 
 Data_analysis/__pycache__/
+
+Neural_network/Neural_network_interface/__pycache__/
