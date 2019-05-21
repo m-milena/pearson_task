@@ -354,6 +354,26 @@
      </spacer>
     </item>
    </layout>
+   <zorder>score_label</zorder>
+   <zorder>essay_label</zorder>
+   <zorder>maths_label</zorder>
+   <zorder>art_label</zorder>
+   <zorder>language_edit</zorder>
+   <zorder>gpa_label</zorder>
+   <zorder>social_label</zorder>
+   <zorder>line_2</zorder>
+   <zorder>language_label</zorder>
+   <zorder>essay_edit</zorder>
+   <zorder>score_edit</zorder>
+   <zorder>maths_edit</zorder>
+   <zorder>interview_edit</zorder>
+   <zorder>interview_label</zorder>
+   <zorder>input_label</zorder>
+   <zorder>social_box</zorder>
+   <zorder>art_edit</zorder>
+   <zorder>graduation</zorder>
+   <zorder>graduation_button</zorder>
+   <zorder>gpa_edit</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -367,6 +387,18 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <tabstops>
+  <tabstop>gpa_edit</tabstop>
+  <tabstop>maths_edit</tabstop>
+  <tabstop>art_edit</tabstop>
+  <tabstop>language_edit</tabstop>
+  <tabstop>essay_edit</tabstop>
+  <tabstop>interview_edit</tabstop>
+  <tabstop>social_box</tabstop>
+  <tabstop>score_edit</tabstop>
+  <tabstop>graduation_button</tabstop>
+  <tabstop>graduation</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
